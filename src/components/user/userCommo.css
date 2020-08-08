@@ -1,0 +1,23 @@
+.el-row {
+    /* margin-bottom: 20px; */
+    background-color: #f9fafc;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.tit {
+    /* padding: 10px 0; */
+}
+
+.el-col {
+    /* border-radius: 15px; */
+    background-color: #f9fafc;
+
+    /* background-color: #0000fe; */
+}
+
+/* .el-form {
+    padding: 0 50px;
+} */
