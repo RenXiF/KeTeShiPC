@@ -8,15 +8,15 @@ import '@/assets/style/common.css';
 import Home from './views/Home.vue';
 // import About from './views/About.vue';
 // import Login from './views/Login.vue';
-import Slot from './views/Slot.vue';
-import Bubble from './views/Bubble.vue';
-import Earth from './views/Earth.vue';
+// import Slot from './views/Slot.vue';
+// import Bubble from './views/Bubble.vue';
+// import Earth from './views/Patch.vue';
 // import Patch from './views/Patch.vue';//功能菜单
 // import User from './views/User.vue';
 // import Photo from './views/Photo.vue';
-import Query from './views/Query.vue';
+// import Query from './views/Patch.vue';
 
-import School from './views/Query.vue';
+// import School from './views/Patch.vue';
 
 
 Vue.use(ElementUI);
@@ -317,26 +317,26 @@ const router = new Router({
             showMenu: false,
         },
         // slot插槽
-        {
-            path: '/slot',
-            name: 'slot',
-            component: Slot,
-            showMenu: false,
-        },
+        // {
+        //     path: '/slot',
+        //     name: 'slot',
+        //     component: Slot,
+        //     showMenu: false,
+        // },
         // vue 事件冒泡捕获机制
-        {
-            path: '/bubble',
-            name: 'bubble',
-            showMenu: false,
-            component: Bubble,
-        },
+        // {
+        //     path: '/bubble',
+        //     name: 'bubble',
+        //     showMenu: false,
+        //     component: Bubble,
+        // },
         // 引入cesium地球
-        {
-            path: '/earth',
-            name: 'earth',
-            showMenu: false,
-            component: Earth,
-        },
+        // {
+        //     path: '/earth',
+        //     name: 'earth',
+        //     showMenu: false,
+        //     component: Earth,
+        // },
     ],
 });
 
