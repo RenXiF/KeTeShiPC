@@ -201,6 +201,12 @@ var api = {
 				callback(res);
 			});
 		},
+		// 配置设备回调地址
+		setIdentifyCallback(params, callback) {
+			postForm(httpli.apilT, 'api/device/setIdentifyCallback', params).then((res) => {
+				callback(res);
+			});
+		},
 	},
 	// 主页管理相关接口
 	home: {

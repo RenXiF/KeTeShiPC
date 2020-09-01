@@ -39,7 +39,7 @@
 					"delayTimeForCloseDoor": 500, // Int，继电器控制开门到关门的时间间隔，单位ms
 					"displayModContent": "{name}欢迎你", // String，识别文字显示模式自定义内容
 					"displayModType": 100, // Int，识别文字显示模式
-					"identifyDistance": 1, // Int，识别距离，0：无限制，1：0.5米以内，2：1米以内，3：1.5米以内，4：3米以内
+					"identifyDistance": 2, // Int，识别距离，0：无限制，1：0.5米以内，2：1米以内，3：1.5米以内，4：3米以内
 					"saveIdentifyTime": 3, // Int，识别间隔
 					"identifyScores": 80, // Int，识别分数
 					"multiplayerDetection": 1, // Int，多个人脸检测设置
@@ -414,6 +414,7 @@
 						this.questionModel.deviceKey = this.tableDevice[i].deviceNumber;
 						this.questionModel.secret = this.tableDevice[i].devicePassword;
 						this.addYunDenice();
+						this.setIdentifyCallback();
 					}
 				} else {
 					this.$notify.error('当前学校暂无设备！')
@@ -433,6 +434,31 @@
 						this.$notify.success({
 							title: '成功',
 							message: '添加成功！'
+						})
+					}
+				});
+			},
+			// 配置回调地址
+			setIdentifyCallback() {
+				console.log('配置回调地址');
+				let list ={
+					deviceKey: this.questionModel.deviceKey,
+					secret: this.questionModel.secret,
+					url:'http://120.24.28.135:8080/discern/addDate'
+				};
+				console.log(list);
+				this.$api.yun.setIdentifyCallback(list, (res) => {
+					console.log(res);
+					if (res.code != "000") {
+						this.$notify.error({
+							title: '配置回调地址失败',
+							message: res.msg,
+							duration: 0
+						})
+					} else {
+						this.$notify.success({
+							title: '成功',
+							message: '配置回调地址成功！'
 						})
 					}
 				});
